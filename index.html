@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
+        <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+        <script src="./script.js" defer></script>
+        <title>Library</title>
+    </head>
+
+
+    <body id="body" class="container ">
+        <div class="header justify-content-between d-flex align-items-center mt-3 ms-3 h1" id='header'>
+            <h1 class="h1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                </svg>
+                Library
+            </h1>
+            <div class="d-flex ">
+                <a href="https://github.com/SandyWezzy/Library" class="btn" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" id="icons">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                </a>
+                <form action="">
+                    <input type="submit" class="btn border-2 border border-dark bg-primary " value="Add To Library" id="library_btn">
+                </form>
+            </div>
+        </div>
+        <div>
+            <table class="table  m-2 shadow-lg table-striped-columns table-success" id="table">
+                
+                <thead class="table-danger">
+                    <tr class="">
+                        <!-- <th>
+                            <label for="select_all"></label>
+                            <input title="Select/Deselect All" type="checkbox" id="select_all">
+                        </th> -->
+
+                        <th><a id="head_id" href="#" class="d-table">#</a></th>
+                        <th><a id="head_title" href="#" class="d-table">Title</a></th>
+                        <th><a id="head_author" href="#">Author</a></th>
+                        <th><a id="head_pages" href="#">Pages</a></th>
+                        <th><a id="head_published" href="#">Published</a></th>
+                        <th><a id="head_acquired" href="#">Acquired</a></th>
+                        <th><a id="head_status" href="#">Status</a></th>
+                        <th id="head_option"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider table-striped">
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between container mt-5">
+                <div class="border border-3 rounded-circle text-center w-auto p-4 border-dark" id="info_container">
+                    <p class="h5">Total Books</p>
+                    <p id="books_info"></p>
+                </div>
+                <div class="border border-3 border-dark rounded-circle text-center w-auto p-4" id="info_container">
+                    <p class="h5">Total Pages</p>
+                    <p id="pages_info"></p>
+                </div>
+                <div class="border border-3 border-dark rounded-circle text-center w-auto p-4" id="info_container">
+                    <p class="h5">Read Books</p>
+                    <p id="read_info"></p>
+                </div>
+                <div class="border border-3 border-dark rounded-circle text-center w-auto p-4" id="info_container">
+                    <p class="h5">Unread Books</p>
+                    <p class="" id="unread_info"></p>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <form action="" method="" class="container pb-3 mt-5  me-auto rounded rounded-4 position-absolute top-0" id="library_form">
+                <legend>New Book</legend>
+                <label for="title" class="form-label"></label>
+                <input type="text" id="title" class="input-group" placeholder="Title" required>
+                <label for="author" class="form-label"></label>
+                <input type="text" id="author" class="input-group" placeholder="Author" required>
+                <label for="pages" class="form-label"></label>
+                <input type="number" id="pages" class="input-group" placeholder="Pages" required>
+                <label for="published" class="form-label"></label>
+                <input type="date" id="published" class="input-group" placeholder="Published" required>
+                <label for="acquired" class="form-label"></label>
+                <input type="date" id="acquired" class="input-group" placeholder="Acquired" required>
+                <label for="status" class="form-label"></label>
+                <select id='status' class="form-select">
+                    <option value='Read'>Read</option>
+                    <option value='Not Read'>Not Read</option>
+                </select>
+                <button type="submit" class="btn btn-primary input-group mt-3" id="addBtn">Submit</button>
+            </form>
+        </div>
+        <footer class="text-center mt-5 " >
+            <div class='middle text-center' onclick="window.open('https://github.com/SandyWezzy/','mywindow');" style="cursor: pointer;" >Website made by SandyWezzy</div>
+        </footer>
+    </body>
+
+</html>
