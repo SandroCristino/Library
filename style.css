@@ -10939,13 +10939,15 @@ body {
   background-color: #a3cfbb;
 }
 
-#library_form {
+#library_form,
+#register_form {
+  position: absolute !important;
   border: 1px solid black;
   border-radius: 10px;
   background-color: #9ec5fe;
   z-index: 100;
   opacity: 1 !important;
-  visibility: hidden;
+  display: none;
 }
 
 #info_container {
@@ -10953,6 +10955,7 @@ body {
 }
 
 #library_btn:hover,
+#register_btn:hover,
 #icons:hover {
   transform: rotate(2);
   transform: scale(1.1);
@@ -11002,4 +11005,31 @@ footer:hover {
 .middle:hover:before {
   visibility: visible;
   transform: scaleX(0.25);
+}
+
+.error {
+  background-color: #f8d7da;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border-radius: 0 0 5px 5px;
+}
+
+input.invalid {
+  border-color: #12bf2f;
+  background-color: #fdd;
+}
+
+input.valid {
+  border-color: #12bf2f;
+}
+
+input:focus.invalid {
+  outline: none;
+}
+
+input {
+  display: block;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

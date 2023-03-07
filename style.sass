@@ -3,18 +3,21 @@
 body 
     background-color: $green-200 
 
-#library_form   
+#library_form,
+#register_form   
+    position: absolute !important
     border: 1px solid black 
     border-radius: 10px  
     background-color: $blue-200   
     z-index: 100
     opacity: 1 !important 
-    visibility: hidden
+    display: none
 
 #info_container
     background-color: $gray-200
 
 #library_btn:hover,
+#register_btn:hover,
 #icons:hover
     transform: rotate(2)
     transform: scale(1.1)
@@ -52,3 +55,28 @@ footer:hover
 .middle:hover:before 
     visibility: visible
     transform: scaleX(0.25)
+
+.error
+    background-color: $red-100
+    width: 100%
+    padding: 0
+    margin-bottom: 5px
+    box-sizing: border-box
+    border-radius: 0 0 5px 5px
+
+
+input.invalid 
+    border-color: #12bf2f
+    background-color: #fdd
+
+input.valid
+    border-color: #12bf2f
+    
+input:focus.invalid
+    outline: none
+
+input
+    display: block
+    width: 100%
+
+

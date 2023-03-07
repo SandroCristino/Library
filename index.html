@@ -14,7 +14,7 @@
 
 
     <body id="body" class="container ">
-        <div class="header justify-content-between d-flex align-items-center mt-3 ms-3 h1" id='header'>
+        <div class="header justify-content-between d-flex align-items-center mt-3 ms-3 h1" id='header bodycenter'>
             <h1 class="h1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
                     <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
@@ -28,11 +28,14 @@
                   </svg>
                 </a>
                 <form action="">
-                    <input type="submit" class="btn border-2 border border-dark bg-primary " value="Add To Library" id="library_btn">
+                    <input class="btn border-2 border border-dark bg-primary " value="Add To Library" id="library_btn">
+                </form>
+                <form action="">
+                    <input class="btn border-2 border border-dark bg-info ms-1" value="Register" id="register_btn">
                 </form>
             </div>
         </div>
-        <div>
+        <div class="bodyCenter">
             <table class="table  m-2 shadow-lg table-striped-columns table-success" id="table">
                 
                 <thead class="table-danger">
@@ -98,6 +101,23 @@
                     <option value='Not Read'>Not Read</option>
                 </select>
                 <button type="submit" class="btn btn-primary input-group mt-3" id="addBtn">Submit</button>
+            </form>
+        </div>
+        <div>
+            <form action="./index.html" method="post" class="container pb-3 mt-5 " id="register_form">
+                <legend>Register</legend>
+                <label for="mail" class="form-label"></label>
+                <input type="email" id="mail" class="input-group" placeholder="Mail" required>
+                <label for="country" class="form-label"></label>
+                <input type="text" id="country" class="input-group" placeholder="Country" required>
+                <label for="zip" class="form-label"></label>
+                <input type="text" id="zip" class="input-group" placeholder="ZIP" required>
+                <label for="password" class="form-label"></label>
+                <input type="password" id="password" class="input-group" placeholder="Password" required>
+                <label for="passwordConfirmation" class="form-label"></label>
+                <input type="password" id="passwordConfirmation" class="input-group" placeholder="Password Confirmation" required>
+                <label for="text" class="form-label"></label>
+                <button type="submit" class="submit_button btn btn-primary input-group mt-3" id="addBtn">Submit</button>
             </form>
         </div>
         <footer class="text-center mt-5 " >

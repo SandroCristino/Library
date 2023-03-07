@@ -1,4 +1,5 @@
 
+
 let myLibrary = [];
 
 
@@ -6,12 +7,13 @@ var table = document.getElementById('table');
 const addBtn = document.getElementById('addBtn');
 const library_form = document.getElementById('library_form');
 const body = document.getElementById('body');
-const test = document.getElementById('test');
 const library_btn = document.getElementById('library_btn');
 const books_info = document.getElementById('books_info');
 const pages_info = document.getElementById('pages_info');
 const read_info = document.getElementById('read_info');
 const unread_info = document.getElementById('unread_info')
+const register_btn = document.getElementById('register_btn');
+const bodyCenter = document.getElementById('bodyCenter');
 
 let change_mode = false;
 let modify_btn_info;
@@ -126,28 +128,20 @@ class Book {
   
       modify_btn.addEventListener('click', () => {
         change_mode = true;
-        library_form.setAttribute('style', 'visibility: visible');
-        body.setAttribute('style', 'visibility: hidden');
+        library_form.setAttribute('style', 'display:block');
+        bodyCenter.setAttribute('style', 'visibility: hidden');
       })
   
   
     }
     update_info();
   }
-
- 
-
-
 }
 
-
-
-
 library_btn.addEventListener('click', () => {
-  library_form.setAttribute('style', 'visibility: visible');
-  body.setAttribute('style', 'visibility: hidden');
+  library_form.setAttribute('style', 'display:block');
+  bodyCenter.setAttribute('style', 'visibility: hidden');
 })
-
 
 addBtn.addEventListener('click', () => {
 
@@ -208,8 +202,68 @@ addBtn.addEventListener('click', () => {
     book.update_library();
     
   }
+});
+
+//Additional register form
+const mail = document.getElementById('mail');
+const mailError = mail.nextElementSibling;
+const password = document.getElementById('password');
+const passwordError = password.nextElementSibling;
+const password_confirmation = document.getElementById('passwordConfirmation');
+const password_confirmationError = password_confirmation.nextElementSibling;
+const form = document.getElementById('register_form');
+
+register_btn.addEventListener('click', () => {
+  register_form.setAttribute('style', 'display:block');
+  bodyCenter.setAttribute('style', 'display: none');
+}); 
+
+//Form validation
+const mailRegExp =
+  /^[A-Za-z0-9]+[@][A-Za-z0-9]+.com$/;
+
+const passwordRegExp = 
+  /^[A-Za-z0-9]{10,15}$/;
+
+mail.addEventListener('input', () => {
+  if (mailRegExp.test(mail.value)) {
+    mail.className = 'valid';
+    mailError.textContent = '';
+    mailError.className = 'error'
+  } else {
+    mail.className = 'invalid';
+    mailError.textContent = 'Invalid form'
+  }
+});
+
+password.addEventListener('input', () => {
+  if (passwordRegExp.test(password.value)) {
+    password.className = 'valid';
+    passwordError.textContent = '';
+    passwordError.className = 'error'
+  } else {
+    password.className = 'invalid';
+    passwordError.textContent = 'Invalid form'
+  }
 })
 
+password_confirmation.addEventListener('input', () => {
+  if (password.value == password_confirmation.value) {
+    password_confirmation.className = 'valid';
+    password_confirmationError.textContent = '';
+    password_confirmationError.className = 'error'
+  } else {
+    password_confirmation.className = 'invalid';
+    password_confirmationError.textContent = 'Password not matching'
+  }
+});
+
+form.addEventListener('submit', (event) => {
+  if (!mailRegExp.test(mail.value) || passwordRegExp.test(password.value) || password.value == password_confirmation.value) {
+    event.preventDefault();
+  }
+
+})
 
 
 
